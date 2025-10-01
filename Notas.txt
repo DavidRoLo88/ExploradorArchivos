@@ -1,0 +1,20 @@
+Para instalar y usar firebase:
+
+1. Ejecutar npm install -g firebase-tools
+2. Logearse con firebase login
+3. Instalar CLI de FlutterFire flutter pub add firebase_core
+4. Crear un archivo de configuración donde ira la base de datos :
+    export const enviroment = {
+    production : false,
+    firebase : {
+        apiKey: "AIzaSyAcXmm51F8CK4psc-pupmLU_4Yj0cGHIcM",
+        authDomain: "exploradorangular.firebaseapp.com",
+        projectId: "exploradorangular",
+        storageBucket: "exploradorangular.firebasestorage.app",
+        messagingSenderId: "230342365709",
+        appId: "1:230342365709:web:be05bcc855b639b8683b44",
+        measurementId: "G-XPG4MW8CJD"
+                }
+    };//Lo he sacado desde Analitycs -> Debug no se que
+
+5. Para hacer una llamada ver el .ts ventana-maestra
