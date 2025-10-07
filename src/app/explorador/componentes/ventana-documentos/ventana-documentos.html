@@ -2,5 +2,6 @@
         al pulsar el icono del botón se abrirá la ventana-documentos o ventana-imagenes
     -->
     <div class="bg-sky-100 h-screen w-screen fixed">
-        <button class="btn btn-dash" (click)="abrirVentana()">Pulsa</button>
+        <lista-archivo [archivos]="archivos()"></lista-archivo>
+       <!-- <button class="btn btn-dash" (click)="abrirVentana()">Pulsa</button>-->
     </div>
