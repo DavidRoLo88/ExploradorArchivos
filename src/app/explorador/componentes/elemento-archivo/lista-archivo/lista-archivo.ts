@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Archivo } from '../../../../interface/archivo';
 import { ElementoArchivo } from '../elemento-archivo';
 
@@ -16,8 +15,7 @@ export class ListaArchivo {
   http = inject(HttpClient);
   archivos = input.required<Archivo[]>();
   
-  constructor(rutaActiva : ActivatedRoute) {
-    console.log(`Constructor ListaArchivos ${this.archivos.length}`);
+  constructor() {
     
     /*console.log(`Ruta activa desde lista-archivos ${ rutaActiva.snapshot.url[0] }`);//ruta activa
 

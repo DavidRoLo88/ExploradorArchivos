@@ -1,0 +1,12 @@
+<div class="w-full h-full items-center">
+    <textarea class="pt-4 w-full h-full text-justify" name="areaTexto" id="areaTexto" [value]="texto()" (input)="actualizarTexto($event)">
+        <!-- (input para obtener los cambios del text area)-->
+    </textarea>
+
+   
+</div>
+
+<div class="grid grid-cols-4 w-full">
+    <button class="btn btn-neutral btn-outline col-start-2" (click)="guardarArchivo()">Guardar</button>
+    <button class="btn btn-neutral btn-outline col-start-3" (click)="salir()">Salir</button>
+</div>

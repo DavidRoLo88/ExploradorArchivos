@@ -1,11 +1,9 @@
 import { Util } from './../../../utiles/util';
 import { Component, inject, output, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Directorio } from '../../../interface/directorio'
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { map } from 'rxjs';
 
 @Component({
   selector: 'menu-lateral',
@@ -50,9 +48,7 @@ export class MenuLateral {
   } //Fin constructor
 
   cambiarEvento() {
-    console.log("Es valor anterior es ", this.activo());
     this.activo.update((valor) => !valor);
-    console.log("Es valor actual es ", this.activo());
   }
 
 }
