@@ -1,0 +1,9 @@
+<div class="grid md:grid-cols-4 gap-3 w-4/5 ml-20">
+        @for(archivo of archivos(); track archivo){
+
+            <div >
+                <elemento-archivo [archivo] = "archivo"></elemento-archivo>
+            </div>
+
+        }
+</div>
