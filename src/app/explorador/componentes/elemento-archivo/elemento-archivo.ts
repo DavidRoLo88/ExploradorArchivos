@@ -24,26 +24,29 @@ export class ElementoArchivo {
   
   abrirVentana() {
 
-    if (this.archivo().tipo == 'documento') {
-      const dialog = this.elementoAbrirVentana.open(ObjetoArchivo, {
-        width : '600px',
-        height : '600px',
-        disableClose : true,
-        data : this.archivo().nombre
+    const dialog = this.elementoAbrirVentana.open(ObjetoArchivo, {
+        width : '1440px',
+        height : '700px',
+        disableClose : this.archivo().tipo == 'documento' ? true : false,
+        data : this.archivo()
       });
 
-      dialog.afterClosed().subscribe( resultado => {
-        //Escribimos el documento con los nuevos cambios
-        this.http.post( `assets/recursos/mis-documentos/${ this.archivo().nombre }`, { //Aquí habría que llamar a un servicio backend que se encargue de guardar pero me da pereza
-          nombreArchivo: this.archivo().nombre,
-          contenido: resultado,
-      }, {responseType : 'text'}).subscribe({
-          next: () => console.log(`[Servidor]: Archivo ${this.archivo().nombre} guardado con éxito.`),
-          error: (err) => console.error('[Servidor]: Error al guardar el archivo', err)
-      });
-
-      });
-    }
-          
+      if (this.archivo().tipo == 'documento') {
+        dialog.afterClosed().subscribe( resultado => {
+        
+          this.archivo().texto = resultado;
+  
+          //Escribimos el documento con los nuevos cambios
+          this.http.post( `assets/recursos/mis-documentos/${ this.archivo().nombre }`, { //Aquí habría que llamar a un servicio backend que se encargue de guardar pero me da pereza
+            nombreArchivo: this.archivo().nombre,
+            contenido: resultado,
+        }, {responseType : 'text'}).subscribe({
+            next: () => console.log(`[Servidor]: Archivo ${this.archivo().nombre} guardado con éxito.`),
+            error: (err) => console.error('[Servidor]: Error al guardar el archivo', err)
+        });
+  
+        });
+      }
   }
+
 }
