@@ -1,0 +1,1 @@
+import{Xa as n,ub as a}from"./chunk-3ZIC73LE.js";import"./chunk-U7UK6LYI.js";var i=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["vista-principal"]],decls:1,vars:0,consts:[[1,"h-screen","w-screen","fixed","bg-sky-100"]],template:function(e,c){e&1&&a(0,"div",0)},encapsulation:2})};export{i as default};

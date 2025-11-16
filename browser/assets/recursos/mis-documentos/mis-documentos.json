@@ -1,0 +1,10 @@
+[
+    {
+        "nombre" : "leer.txt",
+        "tipo" : "documento"
+    },
+    {
+        "nombre" : "dibujo.jpg",
+        "tipo" : "imagen"
+    }
+]
